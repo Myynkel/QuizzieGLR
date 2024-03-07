@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet">
+
     <title>Quizzie</title>
     <style>
         body {
@@ -10,13 +12,84 @@
             margin: 0;
         }
 
-        header {
+        
+
+        * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    left: -240px;
+    height: 100%;
+    background-color: currentColor;
+    transition: all .5s ease;
+}
+
+.sidebar a {
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: currentColor;
+    
+}
+
+.sidebar a span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#check {
+    display: none;
+}
+
+label #btn, label #cancel {
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
+    color: currentColor;
+    border-radius: 5px;
+    margin: 15px 30px;
+    font-size: 29px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    line-height: 45px;
+    transition: all .5s ease;
+}
+
+label #cancel {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    margin-left:245px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ label #cancel {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+}
+
+header {
             background-color: #1B4353;
             color: #6DAEDB;
             padding: 10px;
             text-align: center;
             height: 100px;
         }
+
 
         .center-container {
             display: flex;
@@ -37,6 +110,19 @@
             font-size: 48px;
             cursor: pointer;
         }
+
+        .container {
+            position: absolute;
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+
+        .container img {
+            width: 100%; 
+            height: auto; 
+            border: 1px solid #ccc; 
+        }
+        
     </style>
 </head>
 <body>
@@ -45,11 +131,50 @@
         <h1>Quizzie</h1>
     </header>
 
-    <div class="center-container">
-        <button class="startknop">Start de quiz</button>
 
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>Menu</header>
+        <a href="#">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="active">
+            <i class="fa-solid fa-scroll"></i>
+            <span>Quiz #1</span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-scroll"></i>
+            <Span>Quiz #2</Span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-scroll"></i>
+            <span>Quiz #3</span>
+        </a>
     </div>
 
-</body>
+    <div class="center-container">
+        <button class="startknop">Start de quiz</button>
+    </div>
 
+    <div class="container" style="left: 100px;">
+        <img src="your-image-url-1.jpg" alt="img 1">
+    </div>
+
+    <div class="container" style="left: 500px;">
+        <img src="your-image-url-2.jpg" alt="img 2">
+    </div>
+
+    <div class="container" style="left: 900px;">
+        <img src="your-image-url-3.jpg" alt="img 3">
+    </div>
+
+    
+
+</body>
+<script></script>
 </html>
