@@ -105,12 +105,14 @@ header {
 }
 
 .startknop {
+    position: absolute;
+    top: 800px; 
     height: 100px;
     width: 400px;
     background-color: #1c4353;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: #6DAEDB;
     font-size: 48px;
@@ -119,8 +121,9 @@ header {
 
 .container {
     position: absolute;
-    top: 50%; 
-    transform: translateY(-50%);
+    top: 30%;
+    margin-left: 520px;
+    transform: translate(-50%, -50%);
 }
 
 .container img {
