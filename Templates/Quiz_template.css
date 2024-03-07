@@ -9,8 +9,16 @@
     width: 240px;
     left: -240px;
     height: 100%;
-    background-color: currentColor;
+    background-color: #fff;
     transition: all .5s ease;
+}
+
+.sidebar header {
+    font-size: 28px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #fff;
+    user-select: none;
 }
 
 .sidebar a {
@@ -18,7 +26,16 @@
     height: 65px;
     width: 100%;
     color: currentColor;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    transition: all .5s ease;
     
+}
+
+.sidebar a i {
+    font-size: 23px;
+    margin-right: 16px;
 }
 
 .sidebar a span {
