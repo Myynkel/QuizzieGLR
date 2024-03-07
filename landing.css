@@ -87,3 +87,44 @@ label #cancel {
     opacity: 1;
     visibility: visible;
 }    
+
+header {
+    background-color: #1B4353;
+    color: #6DAEDB;
+    padding: 10px;
+    text-align: center;
+    height: 100px;
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+.startknop {
+    height: 100px;
+    width: 400px;
+    background-color: #1c4353;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    color: #6DAEDB;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.container img {
+    width: 100%; 
+    height: auto; 
+    border: 1px solid #ccc; 
+}
