@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="landing.css">
+    <script src="landing.js"></script>
     <title>Quizzie</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
         </a>
         <a href="#">
             <i class="fa-solid fa-scroll"></i>
-            <Span>Quiz #2</Span>
+            <span>Quiz #2</span>
         </a>
         <a href="#">
             <i class="fa-solid fa-scroll"></i>
@@ -37,21 +38,20 @@
     </div>
 
     <div class="center-container">
-        <button class="startknop">Start de quiz</button>
+        <button class="startknop" onclick="startQuiz()">Start de quiz</button>
     </div>
 
-    <div class="container" style="left: 100px;">
-        <img src="your-image-url-1.jpg" alt="img 1">
+    <div class="container" style="left: 100px;" onclick="selectImage(1)">
+        <img src="header.png" alt="img 1">
     </div>
 
-    <div class="container" style="left: 500px;">
-        <img src="your-image-url-2.jpg" alt="img 2">
+    <div class="container" style="left: 500px;" onclick="selectImage(2)">
+        <img src="header.png" alt="img 2">
     </div>
 
-    <div class="container" style="left: 900px;">
-        <img src="your-image-url-3.jpg" alt="img 3">
+    <div class="container" style="left: 900px;" onclick="selectImage(3)">
+        <img src="header.png" alt="img 3">
     </div>
-
     
 
 </body>
