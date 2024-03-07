@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    left: -240px;
+    height: 100%;
+    background-color: currentColor;
+    transition: all .5s ease;
+}
+
+.sidebar a {
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: currentColor;
+    
+}
+
+.sidebar a span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#check {
+    display: none;
+}
+
+label #btn, label #cancel {
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
+    color: currentColor;
+    border-radius: 5px;
+    margin: 15px 30px;
+    font-size: 29px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    line-height: 45px;
+    transition: all .5s ease;
+}
+
+label #cancel {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check:checked ~ label #btn {
+    margin-left:245px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ label #cancel {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+}
