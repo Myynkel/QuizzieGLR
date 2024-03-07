@@ -128,17 +128,22 @@ header {
     position: absolute;
     top: 25%;
     margin-left: 17%;
-    margin-right: 20px; /* Adjust this value to set the space between containers */
+    margin-right: 20px;
 }
 
 .container img {
-    width: 300px; /* Set a fixed width */
-    height: 250px; /* Set a fixed height */
+    width: 300px;
+    height: 250px;
     border: 1px solid #ccc;
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
+    transition: box-shadow 0.3s; 
+}
+
+.container img:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
 }
 
 .container img.selected {
-    box-shadow: 0 0 20px white; /* Add a white glow when selected */
+    box-shadow: 0 0 20px white;
 }
 
