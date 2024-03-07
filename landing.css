@@ -66,6 +66,8 @@ label #btn, label #cancel {
     text-align: center;
     line-height: 45px;
     transition: all .5s ease;
+    top: 28px;
+    z-index: 2;
 }
 
 label #cancel {
