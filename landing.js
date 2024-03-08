@@ -28,9 +28,9 @@ function startQuiz() {
                 window.location.href = 'quiz3.html';
                 break;
             default:
-                alert('selecteer een afbeelding');
+                alert('Selecteer een afbeelding');
         }
     } else {
-        alert('selecteer een afbeelding');
+        alert('Selecteer een afbeelding');
     }
 }
