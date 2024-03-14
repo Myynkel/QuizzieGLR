@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateQuizDescription(selectedImage) {
         const descriptions = [
-            "quiz#1",
+            "quiz over de geschienis van programmeren.",
             "Quiz #2",
             "Quiz #3"
         ];
