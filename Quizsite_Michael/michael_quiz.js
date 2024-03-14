@@ -81,6 +81,27 @@ function toonVraag() {
         OptieKnop.classList.add('optie-knop');
         quizOpties.appendChild(OptieKnop);
     });
-}
-toonVraag()
 
+    const optieKnoppen = document.querySelectorAll('.optie-knop');
+
+    optieKnoppen.forEach(function(knop){
+        knop.addEventListener('click', function() {
+            const gekozenOptie = knop.textContent;
+            controleerAntwoord(gekozenOptie)
+        });
+    });
+}
+
+
+function controleerAntwoord(gekozenOptie) {
+    const vraag = vragen[huidigeVraagIndex];
+    const antwoord = vraag.antwoord;
+
+    if (gekozenOptie == antwoord) {
+        quizAntwoord.textContent = "Correct!"
+    } else {
+        quizAntwoord.textContent = "Incorrect!"
+    }
+}
+
+toonVraag()
