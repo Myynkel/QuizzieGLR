@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const images = document.querySelectorAll('.container');
+    const quizDescriptions = document.querySelectorAll('.quiz-description');
 
     images.forEach(function (image, index) {
         image.addEventListener('click', function () {
@@ -8,9 +9,27 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             image.classList.add('selected');
-            selectedImage = index + 1; 
+            selectedImage = index + 1;
+
+            updateQuizDescription(selectedImage);
         });
     });
+
+    function updateQuizDescription(selectedImage) {
+        const descriptions = [
+            "quiz#1",
+            "Quiz #2",
+            "Quiz #3"
+        ];
+
+        quizDescriptions.forEach(function (description, index) {
+            if (index + 1 === selectedImage) {
+                description.textContent = descriptions[index];
+            } else {
+                description.textContent = "";
+            }
+        });
+    }
 });
 
 let selectedImage = null;
