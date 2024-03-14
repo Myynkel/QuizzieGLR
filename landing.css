@@ -127,12 +127,12 @@ header {
 .container {
     position: absolute;
     top: 25%;
-    margin-left: 17%;
-    margin-right: 20px;
+    margin-left: 16%;
+    margin-right: 25px;
 }
 
 .container img {
-    width: 350px;
+    width: 385px;
     height: 280px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -147,3 +147,6 @@ header {
     box-shadow: 0 0 20px white;
 }
 
+.quiz-description {
+    font-size: 18px;
+}
