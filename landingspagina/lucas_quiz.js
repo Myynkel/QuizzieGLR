@@ -40,7 +40,7 @@ const vragen = [
         antwoord: "Het herhaaldelijk uitvoeren van een blok code",
         uitleg: "Een 'for' loop wordt gebruikt om een bepaald blok code herhaaldelijk uit te voeren, waarbij de loopvariabele gecontroleerd kan worden.",
     },
-    {
+      {
         vraag: "Wat is een ander woord voor 'variabele' in programmeertaal?",
         image: "",
         opties: ["Label", "Container", "Box", "Identifier"],
@@ -104,17 +104,19 @@ function controleerAntwoord(gekozenOptie) {
 
     if (gekozenOptie == antwoord) {
         quizAntwoord.textContent = "Correct!";
-        setTimeout(function () {
-            huidigeVraagIndex++;
-            if (huidigeVraagIndex < vragen.length) {
-                toonVraag();
-            } else {
-                console.log("Quiz completed!");
-            }
-        }, 500); 
     } else {
         quizAntwoord.textContent = "Incorrect!";
     }
+
+    setTimeout(function () {
+        huidigeVraagIndex++;
+        if (huidigeVraagIndex < vragen.length) {
+            toonVraag();
+        } else {
+            console.log("Quiz completed!");
+        }
+    }, 500); 
 }
+
 
 toonVraag();
