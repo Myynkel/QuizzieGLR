@@ -99,9 +99,26 @@ function controleerAntwoord(gekozenOptie) {
 
     if (gekozenOptie == antwoord) {
         quizAntwoord.textContent = "Correct!"
+        document.getElementById("quiz-antwoord").style.color = "Green"
+        document.getElementById("quiz-antwoord").style.backgroundColor = "white"
     } else {
         quizAntwoord.textContent = "Incorrect!"
+        document.getElementById("quiz-antwoord").style.color = "Red"
+        document.getElementById("quiz-antwoord").style.backgroundColor = "white"
     }
+
+    setTimeout(function() {
+        volgendeVraag();
+    }, 1200);
 }
 
 toonVraag()
+
+function volgendeVraag() {
+    huidigeVraagIndex++
+    if (huidigeVraagIndex < vragen.length) {
+        toonVraag();
+        quizAntwoord.textContent = "";
+        document.getElementById("quiz-antwoord").style.backgroundColor = ""
+    } 
+}

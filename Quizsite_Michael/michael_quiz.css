@@ -112,5 +112,12 @@ main {
     display: grid;
 }
 
+.quiz-antwoord {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 2em;
+}
+
 
 
