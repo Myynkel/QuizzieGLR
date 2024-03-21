@@ -20,40 +20,46 @@ const vragen = [
         antwoord: "1943",
     },
     {
-        vraag: "",
+        vraag: "Hoeveel bits zijn er in een byte?",
         image: "",
-        opties: [],
-        antwoord: "",
+        opties: ["4", "8", "16", "32"],
+        antwoord: "8",
+        uitleg: "Een byte bestaat uit 8 bits.",
     },
     {
-        vraag: "",
+        vraag: "Wat is de hoofdfunctie van een compiler?",
         image: "",
-        opties: [],
-        antwoord: "",
+        opties: ["Debugging", "Vertalen van programmeercode naar machinetaal", "Gebruikersinvoer verwerken", "Data opslaan"],
+        antwoord: "Vertalen van programmeercode naar machinetaal",
+        uitleg: "Een compiler vertaalt programmeercode geschreven in een programmeertaal naar machinetaal zodat de computer het kan uitvoeren.",
     },
     {
-        vraag: "",
+        vraag: "Wat is het doel van een 'for' loop in programmeren?",
         image: "",
-        opties: [],
-        antwoord: "",
+        opties: ["Het vergelijken van waarden", "Het toewijzen van variabelen", "Het herhaaldelijk uitvoeren van een blok code", "Het definiëren van functies"],
+        antwoord: "Het herhaaldelijk uitvoeren van een blok code",
+        uitleg: "Een 'for' loop wordt gebruikt om een bepaald blok code herhaaldelijk uit te voeren, waarbij de loopvariabele gecontroleerd kan worden.",
+    },
+      {
+        vraag: "Wat is een ander woord voor 'variabele' in programmeertaal?",
+        image: "",
+        opties: ["Label", "Container", "Box", "Identifier"],
+        antwoord: "Identifier",
+        uitleg: "In programmeertalen wordt een variabele vaak aangeduid als een 'identifier', omdat het een naam is die wordt gebruikt om een waarde op te slaan.",
     },
     {
-        vraag: "",
+        vraag: "Wat is het resultaat van 2 + 2 in de programmeertaal JavaScript?",
         image: "",
-        opties: [],
-        antwoord: "",
+        opties: ["4", "22", "2", "Error"],
+        antwoord: "4",
+        uitleg: "De uitkomst van de optelling van 2 + 2 in JavaScript is 4, omdat het een eenvoudige wiskundige bewerking is die resulteert in een getal.",
     },
     {
-        vraag: "",
+        vraag: "Wat wordt bedoeld met 'DRY' in softwareontwikkeling?",
         image: "",
-        opties: [],
-        antwoord: "",
-    },
-    {
-        vraag: "",
-        image: "",
-        opties: [],
-        antwoord: "",
+        opties: ["Don't Repeat Yourself", "Do Return Yourself", "Do Repeat Yourself", "Don't Return Yourself"],
+        antwoord: "Don't Repeat Yourself",
+        uitleg: "'DRY' staat voor 'Don't Repeat Yourself' en is een principe in softwareontwikkeling dat herhaling van code moet vermijden door herbruikbaarheid te bevorderen.",
     },
     {
         vraag: "",
@@ -98,17 +104,19 @@ function controleerAntwoord(gekozenOptie) {
 
     if (gekozenOptie == antwoord) {
         quizAntwoord.textContent = "Correct!";
-        setTimeout(function () {
-            huidigeVraagIndex++;
-            if (huidigeVraagIndex < vragen.length) {
-                toonVraag();
-            } else {
-                console.log("Quiz completed!");
-            }
-        }, 500); 
     } else {
         quizAntwoord.textContent = "Incorrect!";
     }
+
+    setTimeout(function () {
+        huidigeVraagIndex++;
+        if (huidigeVraagIndex < vragen.length) {
+            toonVraag();
+        } else {
+            console.log("Quiz completed!");
+        }
+    }, 500); 
 }
+
 
 toonVraag();
