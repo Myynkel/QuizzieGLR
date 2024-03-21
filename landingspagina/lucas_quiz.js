@@ -7,17 +7,17 @@ const vragen = [
         uitleg: "Er zijn op dit moment 700 programmeertalen",
     },
     {
-        vraag: "Wanneer werd het eerste computerirus gemaakt?",
+        vraag: "Wanneer werd het eerste computervirus gemaakt?",
         image: "",
         opties: ["1986", "1943", "1971", "2004"],
         antwoord: "1986",
-        uitleg: "Tussen 1943 en 1945 ontwikkelde de duitser Konrad Zuse Plankalkül, Plankalkül was de eerste hogere programmeertaal",
+        uitleg: "Het eerste computervirus werd in 1986 gemaakt zodat hun klanten hun werk niet kon kopieren.",
     },
     {
-        vraag: "",
+        vraag: "Wanneer werd de eerste computer gemaakt?",
         image: "",
-        opties: [],
-        antwoord: "",
+        opties: ["1943", "1880", "1541", "1975"],
+        antwoord: "1943",
     },
     {
         vraag: "",
