@@ -62,7 +62,7 @@ label #btn, label #cancel {
     margin: 15px 30px;
     font-size: 29px;
     height: 45px;
-    width: 45px;
+    width: 45px;    
     text-align: center;
     line-height: 45px;
     transition: all .5s ease;
