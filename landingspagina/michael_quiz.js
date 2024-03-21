@@ -49,34 +49,34 @@ const vragen = [
         uitleg: "HTML (HyperText Markup Language) werd veel gebruikt voor het maken van websites in de jaren 90 vanwege zijn vermogen om gestructureerde informatie op het internet te presenteren."
     },
     {
-        vraag: "Welke taal werd vaak gebruikt voor het maken van websites in de jaren 90?",
+        vraag: "Wat was de eerste programmeertaal die werd gebruikt voor de ontwikkeling van Apple's macOS-besturingssysteem?",
         type: "open",
-        antwoord: "HTML",
-        uitleg: "HTML (HyperText Markup Language) werd veel gebruikt voor het maken van websites in de jaren 90 vanwege zijn vermogen om gestructureerde informatie op het internet te presenteren."
+        antwoord: "Objective-C",
+        uitleg: "Objective-C was de oorspronkelijke programmeertaal die werd gebruikt voor de ontwikkeling van Apple's macOS-besturingssysteem, voordat Swift werd geïntroduceerd."
     },
     {
-        vraag: "Welke taal werd vaak gebruikt voor het maken van websites in de jaren 90?",
+        vraag: "Wat was de naam van de eerste functionele programmeertaal, ontworpen in de late jaren 1950?",
         type: "open",
-        antwoord: "HTML",
-        uitleg: "HTML (HyperText Markup Language) werd veel gebruikt voor het maken van websites in de jaren 90 vanwege zijn vermogen om gestructureerde informatie op het internet te presenteren."
+        antwoord: "LISP",
+        uitleg: "LISP, ontwikkeld in de late jaren 1950, was de eerste functionele programmeertaal. Het wordt nog steeds gebruikt in verschillende toepassingen, vooral in kunstmatige intelligentie en academische onderzoek."
     },
     {
-        vraag: "Welke taal werd vaak gebruikt voor het maken van websites in de jaren 90?",
+        vraag: "Wat was de rol van Ada Lovelace in de geschiedenis van programmeren?",
         type: "open",
-        antwoord: "HTML",
-        uitleg: "HTML (HyperText Markup Language) werd veel gebruikt voor het maken van websites in de jaren 90 vanwege zijn vermogen om gestructureerde informatie op het internet te presenteren."
+        antwoord: "Eerste programmeur",
+        uitleg: "Ada Lovelace wordt beschouwd als de eerste programmeur ter wereld vanwege haar werk aan de analytische machine van Charles Babbage, waarbij ze complexe algoritmen bedacht."
     },
     {
-        vraag: "Welke taal werd vaak gebruikt voor het maken van websites in de jaren 90?",
+        vraag: "Wat was de oorspronkelijke naam van python?",
         type: "open",
-        antwoord: "HTML",
-        uitleg: "HTML (HyperText Markup Language) werd veel gebruikt voor het maken van websites in de jaren 90 vanwege zijn vermogen om gestructureerde informatie op het internet te presenteren."
+        antwoord: "Monty",
+        uitleg: "De oorspronkelijke naam van de programmeertaal Python was Monty, vernoemd naar de Britse komiek Monty Python. Het werd later hernoemd om verwarring te voorkomen met de programmeertaal Monty."
     },
     {
-        vraag: "Welke taal werd vaak gebruikt voor het maken van websites in de jaren 90?",
+        vraag: "Welke taal werd gebruikt voor de ontwikkeling van UNIX-besturingssystemen?",
         type: "open",
-        antwoord: "HTML",
-        uitleg: "HTML (HyperText Markup Language) werd veel gebruikt voor het maken van websites in de jaren 90 vanwege zijn vermogen om gestructureerde informatie op het internet te presenteren."
+        antwoord: "C",
+        uitleg: "C werd gebruikt voor de ontwikkeling van UNIX-besturingssystemen vanwege zijn kracht, draagbaarheid en efficiëntie."
     }
 ];
 
@@ -84,6 +84,7 @@ function shuffleQuestions(array) {
     array.sort(() => Math.random() - 0.5);
     return array
 }
+
 
 shuffleQuestions(vragen);
 
@@ -97,6 +98,7 @@ function toonVraag() {
     const vraag = vragen[huidigeVraagIndex];
     quizVraag.textContent = vraag.vraag;
 
+    document.getElementById("quiz-uitleg").textContent = ''
     quizOpties.innerHTML = '';
 
     if (vraag.type == "meerkeuze") {
@@ -124,6 +126,7 @@ function toonVraag() {
         antwoordInvoer.addEventListener("keydown", function(event) {
             if (event.key == "Enter") {
                 const gegevenAntwoord = antwoordInvoer.value;
+                gegevenAntwoord.toUpperCase();
                 controleerAntwoord(gegevenAntwoord)
             }
         })
@@ -133,9 +136,9 @@ function toonVraag() {
 
 function controleerAntwoord(gekozenOptie) {
     const vraag = vragen[huidigeVraagIndex];
-    const antwoord = vraag.antwoord;
+    const antwoord = vraag.antwoord.toLowerCase();
 
-    if (gekozenOptie == antwoord) {
+    if (gekozenOptie.toLowerCase() == antwoord) {
         quizAntwoord.textContent = "Correct!"
         document.getElementById("quiz-antwoord").style.color = "Green"
         document.getElementById("quiz-antwoord").style.backgroundColor = "white"
@@ -147,11 +150,13 @@ function controleerAntwoord(gekozenOptie) {
         quizAntwoord.textContent = "Incorrect!"
         document.getElementById("quiz-antwoord").style.color = "Red"
         document.getElementById("quiz-antwoord").style.backgroundColor = "white"
-        
 
-        setTimeout(function() {
-            volgendeVraag();
-        }, 2000);
+
+        document.getElementById("quiz-uitleg").textContent = vraag.uitleg;
+
+        //setTimeout(function() {
+            //volgendeVraag();
+        //}, 4000);
     }
 }
 
