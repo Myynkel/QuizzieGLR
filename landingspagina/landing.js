@@ -44,7 +44,7 @@ function startQuiz() {
                 window.location.href = 'lucas_quiz.html';
                 break;
             case 3:
-                window.location.href = 'index.html';
+                window.location.href = 'yunus_quiz.html';
                 break;
             default:
                 alert('Selecteer een afbeelding');
