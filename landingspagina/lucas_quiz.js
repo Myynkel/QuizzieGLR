@@ -73,39 +73,38 @@ const vragen = [
         vraag: "Kun je uitleggen wat een functie is in programmeren?",
         type: "open",
         antwoord: "Een stuk code dat een taak uitvoert",
-        uitleg: "Een functie is een stuk code dat een taak uitvoert"
+        uitleg: "Functies zijn stukjes code die een specifieke taak uitvoeren wanneer ze worden aangeroepen."
     },
     {
         vraag: "Wat betekent het om een variabele te declareren?",
         type: "open",
         antwoord: "Het toewijzen van een naam aan een waarde",
-        uitleg: ""
+        uitleg: "Een variabele declareren betekent dat je een naam toewijst aan een waarde in een programma."
     },
     {
         vraag: "Kun je uitleggen wat een boolean is?",
         type: "open",
         antwoord: "Type met twee waarden waar of onwaar",
-        uitleg: ""
+        uitleg: "Boolean is een datatype met slechts twee waarden: waar (true) of onwaar (false)."
     },
     {
         vraag: "Verschil tussen string en nummer",
         type: "open",
         antwoord: "tekst versus getal",
-        uitleg: ""
+        uitleg: "Een string is een reeks tekens, terwijl een nummer een numerieke waarde is."
     },
     {
         vraag: "Wat is een loop?",
         type: "open",
         antwoord: "het herhaaldelijk uitvoeren van code",
-        uitleg: ""
+        uitleg: "Een loop is een constructie die code herhaaldelijk uitvoert zolang aan een bepaalde voorwaarde wordt voldaan."
     }
 ];
 
 function shuffleQuestions(array) {
     array.sort(() => Math.random() - 0.5);
-    return array
+    return array;
 }
-
 
 shuffleQuestions(vragen);
 
@@ -114,81 +113,91 @@ const quizOpties = document.querySelector('.quiz-opties');
 const quizAntwoord = document.querySelector('.quiz-antwoord');
 
 let huidigeVraagIndex = 0;
+let score = 0;
 
 function toonVraag() {
     const vraag = vragen[huidigeVraagIndex];
     quizVraag.textContent = vraag.vraag;
 
-    document.getElementById("quiz-uitleg").textContent = ''
+    document.getElementById("quiz-uitleg").textContent = '';
     quizOpties.innerHTML = '';
 
-    if (vraag.type == "meerkeuze") {
-        vraag.opties.forEach (optie => {
-            const OptieKnop = document.createElement('button');
-            OptieKnop.textContent = optie;
-            OptieKnop.classList.add('optie-knop');
-            quizOpties.appendChild(OptieKnop);
+    if (vraag.type === "meerkeuze") {
+        vraag.opties.forEach(optie => {
+            const optieKnop = document.createElement('button');
+            optieKnop.textContent = optie;
+            optieKnop.classList.add('optie-knop');
+            quizOpties.appendChild(optieKnop);
         });
-    
+
         const optieKnoppen = document.querySelectorAll('.optie-knop');
-    
-        optieKnoppen.forEach(function(knop){
-            knop.addEventListener('click', function() {
+
+        optieKnoppen.forEach(function (knop) {
+            knop.addEventListener('click', function () {
                 const gekozenOptie = knop.textContent;
-                controleerAntwoord(gekozenOptie)
+                controleerAntwoord(gekozenOptie);
             });
         });
-    } else if (vraag.type == "open") {
+    } else if (vraag.type === "open") {
         const antwoordInvoer = document.createElement("input");
         antwoordInvoer.setAttribute("type", "text");
         antwoordInvoer.classList.add("antwoord-invoer");
         quizOpties.appendChild(antwoordInvoer);
 
-        antwoordInvoer.addEventListener("keydown", function(event) {
-            if (event.key == "Enter") {
+        antwoordInvoer.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
                 const gegevenAntwoord = antwoordInvoer.value;
-                gegevenAntwoord.toUpperCase();
-                controleerAntwoord(gegevenAntwoord)
+                controleerAntwoord(gegevenAntwoord);
             }
-        })
+        });
     }
 }
-
 
 function controleerAntwoord(gekozenOptie) {
     const vraag = vragen[huidigeVraagIndex];
     const antwoord = vraag.antwoord.toLowerCase();
 
-    if (gekozenOptie.toLowerCase() == antwoord) {
-        quizAntwoord.textContent = "Correct!"
-        document.getElementById("quiz-antwoord").style.color = "Green"
-        document.getElementById("quiz-antwoord").style.backgroundColor = "white"
-
-        setTimeout(function() {
-            volgendeVraag();
-        }, 1200);
+    if (gekozenOptie.toLowerCase() === antwoord) {
+        score++;
+        quizAntwoord.textContent = "Correct!";
+        quizAntwoord.style.color = "green";
     } else {
-        quizAntwoord.textContent = "Incorrect!"
-        document.getElementById("quiz-antwoord").style.color = "Red"
-        document.getElementById("quiz-antwoord").style.backgroundColor = "white"
-
-
+        quizAntwoord.textContent = "Incorrect!";
+        quizAntwoord.style.color = "red";
         document.getElementById("quiz-uitleg").textContent = vraag.uitleg;
-
-        //setTimeout(function() {
-            //volgendeVraag();
-        //}, 4000);
     }
+
+    setTimeout(function () {
+        volgendeVraag();
+    }, 1200);
 }
 
-toonVraag()
+function toonScorePopUp() {
+    const scorePopup = document.createElement("div");
+    scorePopup.classList.add("score-popup");
+
+    const scoreTekst = document.createElement("p");
+    scoreTekst.textContent = "Je score is: " + score;
+    scorePopup.appendChild(scoreTekst);
+
+    const homepageButton = document.createElement("button");
+    homepageButton.textContent = "Ga naar de homepage";
+    homepageButton.addEventListener("click", function () {
+        window.location.href = "landing.html";
+    });
+    scorePopup.appendChild(homepageButton);
+
+    document.body.appendChild(scorePopup);
+}
 
 function volgendeVraag() {
-    huidigeVraagIndex++
+    huidigeVraagIndex++;
     if (huidigeVraagIndex < vragen.length) {
         toonVraag();
         quizAntwoord.textContent = "";
-        document.getElementById("quiz-antwoord").style.backgroundColor = ""
-    } 
+    } else {
+        toonScorePopUp();
+    }
 }
 
+toonVraag();
