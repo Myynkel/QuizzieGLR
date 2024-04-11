@@ -154,10 +154,28 @@ function controleerAntwoord(gekozenOptie) {
 
         document.getElementById("quiz-uitleg").textContent = vraag.uitleg;
 
-        //setTimeout(function() {
-            //volgendeVraag();
-        //}, 4000);
+        setTimeout(function() {
+            volgendeVraag();
+        }, 4000);
     }
+}
+
+function toonScorePopUp() {
+    const scorePopup = document.createElement("div");
+    scorePopup.classList.add("score-popup");
+
+    const scoreTekst = document.createElement("p");
+    scoreTekst.textContent = "Je score is: " + score;
+    scorePopup.appendChild(scoreTekst);
+
+    const homepageButton = document.createElement("button");
+    homepageButton.textContent = "Ga naar de homepage";
+    homepageButton.addEventListener("click", function () {
+        window.location.href = "landing.html";
+    });
+    scorePopup.appendChild(homepageButton);
+
+    document.body.appendChild(scorePopup);
 }
 
 toonVraag()
