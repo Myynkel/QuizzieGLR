@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lucas_quiz.css">
+    <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet">
+    <title>Quiz Lucas</title>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header class="meneTitel">Menu</header>
+        <a href="landing.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="michael_quiz.html" class="active">
+            <i class="fa-solid fa-scroll"></i>
+            <span>Quiz Michael</span>
+        </a>
+        <a href="lucas_quiz.html">
+            <i class="fa-solid fa-scroll"></i>
+            <Span>Quiz Lucas</Span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-scroll"></i>
+            <span>Quiz Yunus</span>
+        </a>
+    </header>
+    <main>
+        <div class="quiz-container">
+            <h1 class="quiz-vraag"></h1>
+            <div class="quiz-opties"></div>
+            <p class="quiz-antwoord" id="quiz-antwoord"></p>
+            <p class="quiz-uitleg" id="quiz-uitleg"></p>
+        </div>
+    </main>
+
+    <script src="lucas_quiz.js" defer></script>
+</body>
+</html>
