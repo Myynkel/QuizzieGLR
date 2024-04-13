@@ -1,3 +1,12 @@
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 0px; 
+    height: auto;
+    z-index: 2; 
+}
+
 body {
     background-color: #395b68;
     margin: 0;
@@ -62,7 +71,7 @@ label #btn, label #cancel {
     margin: 15px 30px;
     font-size: 29px;
     height: 45px;
-    width: 45px;
+    width: 45px;    
     text-align: center;
     line-height: 45px;
     transition: all .5s ease;

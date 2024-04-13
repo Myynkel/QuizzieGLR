@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateQuizDescription(selectedImage) {
         const descriptions = [
-            "Quiz over de geschienis van programmeren.",
-            "Quiz met leuke feitjes over programmeren",
-            "Quiz van Yunus"
+            "quiz over de geschienis van programmeren.",
+            "Quiz #2",
+            "Quiz #3"
         ];
 
         quizDescriptions.forEach(function (description, index) {
@@ -44,7 +44,7 @@ function startQuiz() {
                 window.location.href = 'lucas_quiz.html';
                 break;
             case 3:
-                window.location.href = 'index.html';
+                window.location.href = 'quiz3.html';
                 break;
             default:
                 alert('Selecteer een afbeelding');
