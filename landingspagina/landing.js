@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateQuizDescription(selectedImage) {
         const descriptions = [
-            "quiz over de geschienis van programmeren.",
-            "Quiz #2",
-            "Quiz #3"
+            "Quiz over de geschienis van programmeren.",
+            "Quiz met leuke feitjes over programmeren.",
+            "Quiz van Yunus"
         ];
 
         quizDescriptions.forEach(function (description, index) {
@@ -44,7 +44,7 @@ function startQuiz() {
                 window.location.href = 'lucas_quiz.html';
                 break;
             case 3:
-                window.location.href = 'quiz3.html';
+                window.location.href = 'yunus_quiz.html';
                 break;
             default:
                 alert('Selecteer een afbeelding');
@@ -53,7 +53,3 @@ function startQuiz() {
         alert('Selecteer een afbeelding');
     }
 }
-
-document.getElementById('quiz2').addEventListener('click', function() {
-    window.location.href = 'lucas_quiz.html'; 
-});
